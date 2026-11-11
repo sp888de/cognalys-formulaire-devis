@@ -2001,13 +2001,14 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;label&gt;Vous êtes… *
           &lt;select name=&quot;profil&quot; required&gt;&lt;option value=&quot;&quot;&gt;Choisir un profil&lt;/option&gt;&lt;option value=&quot;particulier&quot;&gt;Particulier&lt;/option&gt;&lt;option&gt;Entreprise&lt;/option&gt;&lt;option&gt;Syndic ou gestionnaire&lt;/option&gt;&lt;option&gt;Autre&lt;/option&gt;&lt;/select&gt;
         &lt;/label&gt;
-        &lt;label&gt;Prénom et nom *&lt;input required autocomplete=&quot;name&quot;&gt;&lt;/label&gt;
+        &lt;label&gt;Prénom *&lt;input name=&quot;prenom&quot; required autocomplete=&quot;given-name&quot;&gt;&lt;/label&gt;
+        &lt;label&gt;Nom *&lt;input name=&quot;nom&quot; required autocomplete=&quot;family-name&quot;&gt;&lt;/label&gt;
         &lt;label hidden data-organization&gt;Entreprise ou organisation&lt;input autocomplete=&quot;organization&quot;&gt;&lt;/label&gt;
       &lt;/div&gt;
-      &lt;p&gt;Indiquez au moins un moyen de contact *&lt;/p&gt;
+      &lt;p&gt;Renseignez votre adresse e-mail et votre téléphone.&lt;/p&gt;
       &lt;div class=&quot;fields&quot;&gt;
-        &lt;label&gt;Adresse e-mail&lt;input name=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot;&gt;&lt;/label&gt;
-        &lt;label&gt;Téléphone&lt;input name=&quot;telephone&quot; type=&quot;tel&quot; autocomplete=&quot;tel&quot;&gt;&lt;/label&gt;
+        &lt;label&gt;Adresse e-mail *&lt;input required name=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot;&gt;&lt;/label&gt;
+        &lt;label&gt;Téléphone *&lt;input required name=&quot;telephone&quot; type=&quot;tel&quot; autocomplete=&quot;tel&quot;&gt;&lt;/label&gt;
       &lt;/div&gt;
       &lt;label&gt;Contact préféré&lt;select&gt;&lt;option&gt;Sans préférence&lt;/option&gt;&lt;option&gt;Par e-mail&lt;/option&gt;&lt;option&gt;Par téléphone&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
     &lt;/section&gt;

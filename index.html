@@ -2026,7 +2026,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;label&gt;Contact préféré&lt;select name=&quot;contactPrefere&quot;&gt;&lt;option&gt;Sans préférence&lt;/option&gt;&lt;option&gt;Par e-mail&lt;/option&gt;&lt;option&gt;Par téléphone&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
     &lt;/section&gt;
     &lt;footer&gt;
-      &lt;button type=&quot;submit&quot; data-send&gt;Envoyer ma demande de devis &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-send&gt;Envoyer ma demande de devis &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;
       &lt;small&gt;Démo : vos coordonnées et votre demande sont transmises à Cognalys pour préparer et envoyer le devis par e-mail. N’indiquez pas de données sensibles.&lt;/small&gt;
     &lt;/footer&gt;
     &lt;p role=&quot;status&quot;&gt;&lt;/p&gt;
@@ -2150,7 +2150,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       send.disabled = false;
     }
   }
-  form.addEventListener(&#x27;submit&#x27;, event =&gt; {
+  send.addEventListener(&#x27;click&#x27;, transmit);
+  form.addEventListener(&#x27;submit&#x27;, event =&gt; event.preventDefault());
+  form.addEventListener(&#x27;keydown&#x27;, event =&gt; {
+    if (event.key !== &#x27;Enter&#x27; || event.isComposing || event.target.tagName !== &#x27;INPUT&#x27;) return;
     event.preventDefault();
     void transmit();
   });

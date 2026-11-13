@@ -1939,11 +1939,11 @@ html&gt;body{padding:0}&lt;/style&gt;
 
 
 &lt;div id=&quot;clean-site&quot; lang=&quot;fr&quot;&gt;
-  &lt;div class=&quot;demo-note&quot;&gt;Site de démonstration conçu par Cognalys Intelligence · Seul le formulaire est interactif&lt;/div&gt;
+  &lt;div class=&quot;demo-note&quot;&gt;Site de démonstration conçu par Cognalys Intelligence · Demandez votre devis via le formulaire&lt;/div&gt;
   &lt;header class=&quot;site-nav&quot;&gt;
     &lt;div class=&quot;brand&quot;&gt;&lt;span class=&quot;brand-mark&quot; aria-hidden=&quot;true&quot;&gt;✦&lt;/span&gt;&lt;span&gt;clair&lt;span class=&quot;amp&quot;&gt;&amp;&lt;/span&gt;soin&lt;small&gt;NETTOYAGE PROFESSIONNEL&lt;/small&gt;&lt;/span&gt;&lt;/div&gt;
     &lt;nav aria-label=&quot;Navigation de présentation&quot;&gt;&lt;span&gt;Nos prestations&lt;/span&gt;&lt;span&gt;Notre approche&lt;/span&gt;&lt;span&gt;Zone d’intervention&lt;/span&gt;&lt;/nav&gt;
-    &lt;button disabled class=&quot;button outline&quot;&gt;Parlons de votre besoin &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-go-form class=&quot;button outline&quot;&gt;Parlons de votre besoin &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;
   &lt;/header&gt;
   &lt;main&gt;
     &lt;section class=&quot;hero&quot;&gt;
@@ -1951,7 +1951,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;p class=&quot;eyebrow&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt; BUREAUX &amp; DOMICILES · STRASBOURG ET ALENTOURS&lt;/p&gt;
         &lt;h1&gt;Des espaces propres.&lt;br&gt;&lt;em&gt;L’esprit tranquille.&lt;/em&gt;&lt;/h1&gt;
         &lt;p class=&quot;lead&quot;&gt;Au travail comme à la maison, retrouvez le plaisir d’un lieu soigné. Un entretien régulier ou un grand nettoyage, adapté à votre quotidien.&lt;/p&gt;
-        &lt;div class=&quot;hero-actions&quot;&gt;&lt;button disabled class=&quot;button primary&quot;&gt;Demander un devis &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;&lt;span class=&quot;quiet&quot;&gt;Ponctuel ou régulier, selon vos besoins&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;hero-actions&quot;&gt;&lt;button type=&quot;button&quot; data-go-form class=&quot;button primary&quot;&gt;Demander un devis &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/button&gt;&lt;span class=&quot;quiet&quot;&gt;Ponctuel ou régulier, selon vos besoins&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;hero-points&quot;&gt;&lt;span&gt;✓ Prestations sur mesure&lt;/span&gt;&lt;span&gt;✓ Horaires adaptés&lt;/span&gt;&lt;span&gt;✓ Devis détaillé&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;figure class=&quot;hero-photo&quot;&gt;
@@ -2086,6 +2086,13 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;/style&gt;
 &lt;script&gt;
 (() =&gt; {
+  document.querySelectorAll('[data-go-form]').forEach(button =&gt; {
+    button.addEventListener('click', () =&gt; {
+      const target = document.getElementById('cognalys-devis');
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      target.querySelector('input:not([type=&quot;hidden&quot;]), select:not([hidden]), textarea')?.focus({ preventScroll: true });
+    });
+  });
   const root = document.getElementById(&#x27;cognalys-devis&#x27;);
   const form = root.querySelector(&#x27;form&#x27;);
   const fields = form.elements;
@@ -3115,3 +3122,4 @@ html&gt;body{padding:0}&lt;/style&gt;
 </script>
 </body>
 </html>
+

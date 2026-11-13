@@ -2186,6 +2186,8 @@ html&gt;body{padding:0}&lt;/style&gt;
 #clean-site nav{display:flex;gap:26px;font-size:13px;color:#535e6c}
 #clean-site button{font:inherit}
 #clean-site button:disabled{opacity:1;cursor:default}
+#clean-site button[data-go-form]:not(:disabled){cursor:pointer}
+#clean-site button[data-go-form]:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 #clean-site .button{border:0;display:inline-flex;align-items:center;justify-content:space-between;gap:26px;padding:15px 22px;border-radius:8px;font-weight:600;font-size:13px;line-height:1.5}
 #clean-site .outline{border:1px solid #cfdaef;background:#f0f4fb;color:#315496}
 #clean-site .primary{background:var(--blue);color:#fff}
@@ -3122,4 +3124,5 @@ html&gt;body{padding:0}&lt;/style&gt;
 </script>
 </body>
 </html>
+
 
